@@ -1,6 +1,3 @@
-
-事例：http://show.bihe0832.com/markdown.html
-
 基于remark.js使用Markdown实现的在线PPT
 ====
 
