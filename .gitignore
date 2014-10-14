@@ -2,3 +2,5 @@
 .svn/format
 *.svn-base
 .svn/wc.db
+*.project
+config.yaml
