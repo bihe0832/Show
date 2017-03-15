@@ -6,11 +6,11 @@
 
 Remark介绍：
 ---
-####github地址：[https://github.com/gnab/remark](https://github.com/gnab/remark)
+#### github地址：[https://github.com/gnab/remark](https://github.com/gnab/remark)
 
-#####官网：[http://remarkjs.com/](http://remarkjs.com/)
+##### 官网：[http://remarkjs.com/](http://remarkjs.com/)
 
-####使用指引：参见github地址
+#### 使用指引：参见github地址
 
 代码框架：
 ---
@@ -26,7 +26,7 @@ Remark介绍：
 具体事例：
 ---
 
-####Markdown 语法介绍：[http://show.bihe0832.com/markdown.html](http://show.bihe0832.com/markdown.html)
+#### Markdown 语法介绍：[http://show.bihe0832.com/markdown.html](http://show.bihe0832.com/markdown.html)
 - 文件位置：markdown.html
 - 功能简述：markdown及其语法的介绍
 
