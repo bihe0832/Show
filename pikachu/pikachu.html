@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel = "Shortcut Icon" href="http://microdemo.bihe0832.com/res/images/zixie_32.ico" />
+
+  <meta name="author" CONTENT="子勰(bihe0832), code@bihe0832.com" />
+  <meta name="keywords" content="子勰,bihe0832" />
+  <meta name="description" content="子勰的空白页面" />
+  <title>皮卡皮卡~</title>
+
+  <link rel="stylesheet" type="text/css" href="http://microdemo.bihe0832.com/res/css/global.css" />
+  <link rel="stylesheet" type="text/css" href="./pikachu.css" />
+
+  <style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+    }
+    body{
+      --titleTextTop:340px;
+			--titleHeight:800px;
+      --heightScaleByWidth:2.16;
+      --headerH1TextSize:50px;
+      --bottomH1TextSize:30px;
+      --titleMarginBottom:700px;
+    }
+    
+		body{
+			font-family:"微软雅黑";
+			color:#fff;
+      padding: 10px;
+    }
+    
+		.pikachu_container{
+			width:1280px;
+			height:2560px;
+			background:rgb(251,205,60);
+			position:relative;
+      overflow:hidden;
+			margin:0 auto;
+    }
+    
+    .pikachu_container h1{
+			letter-spacing:8px;
+			text-shadow:-1px 2px 3px rgba(0,0,0,0.5);
+    }
+
+		.pikachu_container .header{
+			width:100%;
+			height:var(--titleHeight);
+      position:relative;
+      text-align:center;
+      margin: auto auto;
+      top:var(--titleTextTop);
+    }
+    
+    .pikachu_container .header h1{
+			font-size:var(--headerH1TextSize);
+    }
+
+    .pikachu_container .body{
+      width:760px;
+      position: relative;
+      margin: 0 auto;
+    }
+
+    .pikachu_container .bottom{
+      width:100%;
+			position: relative;
+			top:var(--titleMarginBottom);
+      text-align:center;
+    }
+    
+    .pikachu_container .bottom h1{
+			font-size:var(--bottomH1TextSize);
+    }
+
+    .download{
+      display: relative;
+      top:30px;
+      left: 40px;
+      width: 100px;
+      margin-bottom: 0;
+      font-weight: normal;
+      text-align: center;
+      vertical-align: middle;
+      cursor: pointer;
+      background-image: none;
+      border: 1px solid transparent;
+      white-space: nowrap;
+      padding: 6px 12px;
+      font-size: 14px;
+      line-height: 1.42857143;
+      border-radius: 4px;
+      -webkit-user-select: none;
+      color: #fff;
+      background-color: #428bca;
+      border-color: #357ebd;
+    }
+	</style>
+</head>
+<body>
+  <!-- <div id="download" class="download" href="">下载</div> -->
+  <!-- <div id="previewImage" style="display: none;"></div> -->
+
+<div class="pikachu_container" id="pikachu_container">
+  <div class="header">
+    <!-- <h1>我 是 粑 粑 的 小 可 爱</h1> -->
+  </div>
+  <div class="body">
+    <div class="eyes">
+      <div class="leftEye"></div>
+      <div class="rightEye"></div>
+    </div>
+    <div class="nose"></div>
+    <div class="cheek">
+      <div class="leftCheek"></div>
+      <div class="rightCheek"></div>
+    </div>
+    <div class="mouth">
+      <div class="mouth_main">
+        <div class="tongue"></div>
+      </div>
+    </div>
+    <div class="hands">
+      <div class="leftHand">
+        <div class="leftHand_main">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <div class="leftshadow"></div>
+        </div>
+      </div>
+      <div class="rightHand">
+        <div class="rightHand_main">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <div class="rightshadow"></div>
+        </div>
+      </div>
+    </div>
+    <div class="box">
+      <div class="box_main">
+        <div class="box_circle"></div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom">
+    <!-- <h1>我 是 粑 粑 的 小 可 爱</h1> -->
+    <!-- <img src="./icon.png"  style="width:760px; margin: 0px auto;"/> -->
+  </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js" charset="UTF-8"></script>
+<script type="text/javascript" src="https://blog.bihe0832.com/public/js/jquery.js" charset="UTF-8"></script>
+<script type="text/javascript">
+
+var element = $("#pikachu_container"); // global variable
+var getCanvas; // global variable
+$('document').ready(function(){
+  html2canvas(element, {
+    onrendered: function (canvas) {
+      $("#previewImage").append(canvas);
+      getCanvas = canvas;
+    }
+  });
+});
+$("#download").on('click', function () {
+
+  var imgageData = getCanvas.toDataURL("image/png");
+  // Now browser starts downloading it instead of just showing it
+  var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
+  window.open(newData);
+  // // $("#download").attr("download", "image.png").attr("href", newData);
+
+  // savePDF()
+});
+
+
+var testDivElement = document.getElementById('previewImage');
+
+function savePDF() {
+    var imgData;
+    html2canvas($("#previewImage"), {
+        useCORS: true,
+        onrendered: function (canvas) {
+          var imgageData = getCanvas.toDataURL("image/png");
+            var doc = new jsPDF('p', 'pt', 'a4');
+            doc.addImage(imgData, 'PNG', 10, 10);
+            doc.save('sample-file.png');
+            window.open(imgData);
+        }
+    });
+}
+
+</script>
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=37805902" charset="UTF-8"></script>
+</body>
+</html>
