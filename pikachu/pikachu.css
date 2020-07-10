@@ -34,6 +34,11 @@
     position:absolute;
     top:2px;
     left:2px;
+    -webkit-animation:eyeMove calc(3s *var(--time))  infinite;
+    -moz-animation:eyeMove calc(3s *var(--time)) infinite;
+    -o-animation:eyeMove calc(3s *var(--time)) infinite;
+    -ms-animation:eyeMove calc(3s *var(--time)) infinite;
+    animation:eyeMove calc(3s *var(--time)) infinite;
 }
 
 .body .nose{
@@ -46,6 +51,11 @@
     left:50%;
     top:100px;
     margin-left:-18px;
+    -webkit-animation:noseMove calc(3s *var(--time))  infinite;
+    -moz-animation:noseMove calc(3s *var(--time))  infinite;
+    -o-animation:noseMove calc(3s *var(--time))  infinite;
+    -ms-animation:noseMove calc(3s *var(--time))  infinite;
+    animation:noseMove calc(3s *var(--time))  infinite;
 }
 
 .body .cheek{
@@ -67,6 +77,11 @@
     border-radius:50%;
     position: absolute;
     top:170px;
+    -webkit-animation:cheekMove calc(3s *var(--time))  infinite;
+    -moz-animation:cheekMove calc(3s *var(--time))  infinite;
+    -o-animation:cheekMove calc(3s *var(--time))  infinite;
+    -ms-animation:cheekMove calc(3s *var(--time))  infinite;
+    animation:cheekMove calc(3s *var(--time))  infinite;
 }
 
 .body .mouth{
@@ -90,6 +105,11 @@
     border-bottom-left-radius: 250px 570px;
     border-bottom-right-radius: 250px 590px;
     overflow:hidden;
+    -webkit-animation:mouthMove calc(3s *var(--time))  infinite;
+    -moz-animation:mouthMove calc(3s *var(--time))  infinite;
+    -o-animation:mouthMove calc(3s *var(--time))  infinite;
+    -ms-animation:mouthMove calc(3s *var(--time))  infinite;
+    animation:mouthMove calc(3s *var(--time))  infinite;
 }
 
 .body .mouth:after,.body .mouth:before{
@@ -155,6 +175,11 @@
     -o-transform:rotate(38deg);
     -ms-transform:rotate(38deg);
     transform:rotate(38deg);
+    -webkit-animation:lefthandMove calc(3s *var(--time))  infinite;
+    -moz-animation:lefthandMove calc(3s *var(--time))  infinite;
+    -o-animation:lefthandMove calc(3s *var(--time))  infinite;
+    -ms-animation:lefthandMove calc(3s *var(--time))  infinite;
+    animation:lefthandMove calc(3s *var(--time))  infinite;
 }
 
 
@@ -275,6 +300,11 @@
     -o-transform:rotate(-38deg);
     -ms-transform:rotate(-38deg);
     transform:rotate(-38deg);
+    -webkit-animation:righthandMove calc(3s *var(--time))  infinite;
+    -moz-animation:righthandMove calc(3s *var(--time))  infinite;
+    -ms-animation:righthandMove calc(3s *var(--time))  infinite;
+    -o-animation:righthandMove calc(3s *var(--time))  infinite;
+    animation:righthandMove calc(3s *var(--time))  infinite;
 }
 
 .rightHand_main{
@@ -390,6 +420,11 @@
     left:50%;
     top:320px;
     margin-left:-44px;
+    -webkit-animation:box-rotate calc(4s *var(--time)) ease-in-out infinite alternate;
+    -moz-animation:box-rotate calc(4s *var(--time)) ease-in-out infinite alternate;
+    -o-animation:box-rotate calc(4s *var(--time)) ease-in-out infinite alternate;
+    -ms-animation:box-rotate calc(4s *var(--time)) ease-in-out infinite alternate;
+    animation:box-rotate calc(4s *var(--time)) ease-in-out infinite alternate;
 }
 
 .body .box .box_main{
@@ -437,7 +472,6 @@
     margin-top:-20px;
     z-index:5;
 }
-
 .body .box .box_main .box_circle:after{
     content:'';
     display:block;
@@ -450,6 +484,11 @@
     left:50%;
     margin-left:-9px;
     margin-top:-9px;
+    -webkit-animation:bg_change calc(4s *var(--time)) infinite;
+    -moz-animation:bg_change calc(4s *var(--time)) infinite;
+    -o-animation:bg_change calc(4s *var(--time)) infinite;
+    -ms-animation:bg_change calc(4s *var(--time)) infinite;
+    animation:bg_change calc(4s *var(--time)) infinite; 
 }
 
 /* 皮卡丘动作css*/
@@ -727,7 +766,6 @@
     }
 }
 
-
 @-webkit-keyframes lefthandMove{
     0%,19%,27%,46%,54%,73%,81%,100%{
         -webkit-transform:rotate(38deg) translate3d(0,0,0);
@@ -809,7 +847,6 @@
         transform:rotate(-38deg) translate3d(-5px,3px,0);
     }
 }
-
 
 @-webkit-keyframes box-rotate{
     0%,90%,100%{
@@ -896,60 +933,4 @@
     50%{
         background:rgb(236,2,3);
     }
-}
-/* 眼睛动作设置*/
-.body .eyes .leftEye:after,.body .eyes .rightEye:after{
-    -webkit-animation:eyeMove calc(3s *var(--time))  infinite;
-    -moz-animation:eyeMove calc(3s *var(--time)) infinite;
-    -o-animation:eyeMove calc(3s *var(--time)) infinite;
-    -ms-animation:eyeMove calc(3s *var(--time)) infinite;
-    animation:eyeMove calc(3s *var(--time)) infinite;
-}
-
-.body .nose{
-    -webkit-animation:noseMove calc(3s *var(--time))  infinite;
-    -moz-animation:noseMove calc(3s *var(--time))  infinite;
-    -o-animation:noseMove calc(3s *var(--time))  infinite;
-    -ms-animation:noseMove calc(3s *var(--time))  infinite;
-    animation:noseMove calc(3s *var(--time))  infinite;
-}
-
-.body .cheek .leftCheek,.body .cheek .rightCheek{
-    -webkit-animation:cheekMove calc(3s *var(--time))  infinite;
-    -moz-animation:cheekMove calc(3s *var(--time))  infinite;
-    -o-animation:cheekMove calc(3s *var(--time))  infinite;
-    -ms-animation:cheekMove calc(3s *var(--time))  infinite;
-    animation:cheekMove calc(3s *var(--time))  infinite;
-}
-
-.body .mouth .mouth_main{
-    -webkit-animation:mouthMove calc(3s *var(--time))  infinite;
-    -moz-animation:mouthMove calc(3s *var(--time))  infinite;
-    -o-animation:mouthMove calc(3s *var(--time))  infinite;
-    -ms-animation:mouthMove calc(3s *var(--time))  infinite;
-    animation:mouthMove calc(3s *var(--time))  infinite;
-}
-
-.body .hands .rightHand{
-    -webkit-animation:righthandMove calc(3s *var(--time))  infinite;
-    -moz-animation:righthandMove calc(3s *var(--time))  infinite;
-    -ms-animation:righthandMove calc(3s *var(--time))  infinite;
-    -o-animation:righthandMove calc(3s *var(--time))  infinite;
-    animation:righthandMove calc(3s *var(--time))  infinite;
-}
-
-.body .hands .leftHand{
-    -webkit-animation:lefthandMove calc(3s *var(--time))  infinite;
-    -moz-animation:lefthandMove calc(3s *var(--time))  infinite;
-    -o-animation:lefthandMove calc(3s *var(--time))  infinite;
-    -ms-animation:lefthandMove calc(3s *var(--time))  infinite;
-    animation:lefthandMove calc(3s *var(--time))  infinite;
-}
-
-.body .box .box_main .box_circle:after{
-    -webkit-animation:bg_change calc(3s *var(--time))  infinite;
-    -moz-animation:bg_change calc(3s *var(--time))  infinite;
-    -o-animation:bg_change calc(3s *var(--time))  infinite;
-    -ms-animation:bg_change calc(3s *var(--time))  infinite;
-    animation:bg_change calc(3s *var(--time))  infinite;
 }
