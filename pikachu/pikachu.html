@@ -17,10 +17,6 @@
   <link rel="stylesheet" type="text/css" href="./pikachu.css" />
 
   <style type="text/css">
-		*{
-			margin:0;
-			padding:0;
-    }
     body{
       --titleTextTop:340px;
 			--titleHeight:800px;
@@ -36,6 +32,41 @@
       padding: 10px;
     }
     
+    .tips{
+      top:30px;
+      left: 40px;
+      height: 100px;
+			width:1280px;
+      display: relative;
+      color:#000;
+      margin:0 auto;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    .tips .download{
+      display: relative;
+      top:30px;
+      left: 40px;
+      width: 100px;
+      margin-bottom: 0;
+      font-weight: normal;
+      text-align: center;
+      vertical-align: middle;
+      cursor: pointer;
+      background-image: none;
+      border: 1px solid transparent;
+      white-space: nowrap;
+      padding: 6px 12px;
+      font-size: 14px;
+      line-height: 1.42857143;
+      border-radius: 4px;
+      -webkit-user-select: none;
+      color: #fff;
+      background-color: #428bca;
+      border-color: #357ebd;
+    }
+
 		.pikachu_container{
 			width:1280px;
 			height:2560px;
@@ -57,6 +88,7 @@
       text-align:center;
       margin: auto auto;
       top:var(--titleTextTop);
+      color:rgb(251,205,60);
     }
     
     .pikachu_container .header h1{
@@ -80,34 +112,14 @@
 			font-size:var(--bottomH1TextSize);
     }
 
-    .download{
-      display: relative;
-      top:30px;
-      left: 40px;
-      width: 100px;
-      margin-bottom: 0;
-      font-weight: normal;
-      text-align: center;
-      vertical-align: middle;
-      cursor: pointer;
-      background-image: none;
-      border: 1px solid transparent;
-      white-space: nowrap;
-      padding: 6px 12px;
-      font-size: 14px;
-      line-height: 1.42857143;
-      border-radius: 4px;
-      -webkit-user-select: none;
-      color: #fff;
-      background-color: #428bca;
-      border-color: #357ebd;
-    }
 	</style>
 </head>
 <body>
-  <div id="download" class="download" href="">下载</div>
-  <div id="previewImage" style="display: none;"></div>
-
+<div class="tips">
+    建议使用手机自带浏览器打开，然后上下拖动到合适位置后截屏或者录屏
+    <!-- <div id="download" class="download" href="">下载</div> -->
+    <!-- <div id="previewImage" style="display: none;"></div> -->
+</div>
 <div class="pikachu_container" id="pikachu_container">
   <div class="header">
     <!-- <h1>我 是 粑 粑 的 小 可 爱</h1> -->
@@ -158,55 +170,52 @@
     <!-- <img src="./icon.png"  style="width:760px; margin: 0px auto;"/> -->
   </div>
 </div>
-
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
-
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js" charset="UTF-8"></script>
 <script type="text/javascript" src="https://blog.bihe0832.com/public/js/jquery.js" charset="UTF-8"></script>
 <script type="text/javascript">
 
-var element = $("#pikachu_container"); // global variable
-var getCanvas; // global variable
-$("#download").on('click', function () {
+// var element = $("#pikachu_container"); // global variable
+// var getCanvas; // global variable
+// $("#download").on('click', function () {
 
-  html2canvas(element, {
-    onrendered: function (canvas) {
-      $("#previewImage").append(canvas);
-      getCanvas = canvas;
-      // 保存图片，下载到本地
-      var type = 'png';
-      var imgData = getCanvas.toDataURL(type);
+//   html2canvas(element, {
+//     onrendered: function (canvas) {
+//       $("#previewImage").append(canvas);
+//       getCanvas = canvas;
+//       // 保存图片，下载到本地
+//       var type = 'png';
+//       var imgData = getCanvas.toDataURL(type);
 
-      var _fixType = function (type) {
-          type = type.toLowerCase().replace(/jpg/i, 'jpeg');
-          var r = type.match(/png|jpeg|bmp|gif/)[0];
-          return 'image/' + r;
-      };
-      // 加工image data，替换mime type
-      imgData = imgData.replace(_fixType(type), 'image/octet-stream');
-      /**
-        * 在本地进行文件保存
-        * @param  {String} data     要保存到本地的图片数据
-        * @param  {String} filename 文件名
-        */
-      var saveFile = function (data, filename) {
-          var save_link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
-          save_link.href = data;
-          save_link.download = filename;
+//       var _fixType = function (type) {
+//           type = type.toLowerCase().replace(/jpg/i, 'jpeg');
+//           var r = type.match(/png|jpeg|bmp|gif/)[0];
+//           return 'image/' + r;
+//       };
+//       // 加工image data，替换mime type
+//       imgData = imgData.replace(_fixType(type), 'image/octet-stream');
+//       /**
+//         * 在本地进行文件保存
+//         * @param  {String} data     要保存到本地的图片数据
+//         * @param  {String} filename 文件名
+//         */
+//       var saveFile = function (data, filename) {
+//           var save_link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
+//           save_link.href = data;
+//           save_link.download = filename;
 
-          var event = document.createEvent('MouseEvents');
-          // initMouseEvent()方法参数解释在    http://blog.sina.com.cn/s/blog_3e9b01a50100leyj.html
-          event.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-          save_link.dispatchEvent(event);
-      };
-      // 下载后的文件名
-      var filename = 'pikachu' + '.' + type;
-      // download
-      saveFile(imgData, filename);
-    }
-  });
-});
+//           var event = document.createEvent('MouseEvents');
+//           // initMouseEvent()方法参数解释在    http://blog.sina.com.cn/s/blog_3e9b01a50100leyj.html
+//           event.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+//           save_link.dispatchEvent(event);
+//       };
+//       // 下载后的文件名
+//       var filename = 'pikachu' + '.' + type;
+//       // download
+//       saveFile(imgData, filename);
+//     }
+//   });
+// });
 </script>
 
 <script type="text/javascript" src="http://tajs.qq.com/stats?sId=37805902" charset="UTF-8"></script>
