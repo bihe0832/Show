@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta name="zixie-type" content="common" />
+<meta name="zixie-ignore" content="color-token,glass-gradient,font-title" />
 	<meta charset="UTF-8">
 	<title>css3-loadingEffect</title>
-	<link rel="stylesheet" type="text/css" href="css3-loadingEffect.css">
-	<script type="text/javascript" src="code.js"></script>
+	<link rel="stylesheet" type="text/css" href="css3-loadingEffect.css?v=20907ccd">
+    <link rel="canonical" href="https://show.bihe0832.com/css3-loadingEffect/css3-loadingEffect.html" />
+<style>button { padding: 8px 16px; }</style>
 </head>
 <body>
+<a href="javascript:history.go(-1)">返回</a>
 	<h1>CSS3实现loading效果</h1>
 	<div class="wrapper">
 		<div class="loading-box">
@@ -180,7 +184,10 @@
 			<button id="style_18">获取代码</button>
 		</div>
 	</div>
-	 <script type="text/javascript">
+	 
+<script src="https://cdn.bihe0832.com/js/pikachu-stats.js?v=44a15b01" defer></script>
+  <script type="text/javascript" src="code.js?v=1697affb"></script>
+  <script type="text/javascript">
 	 	function dialog(){
 		    //获取页面的高度和宽度
 		    var sWidth=document.body.scrollWidth || document.documentElement.scrollWidth;
@@ -223,7 +230,6 @@
 			for(var i = 1; i <= 18; i++){
 				document.getElementById("style_"+i).onclick = function(e){
 					dialog();
-					// alert(CODE[e.target.id]);
 					document.getElementById("code").innerHTML = window.CODE[e.target.id];
 				};
 			}
